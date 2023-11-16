@@ -1,0 +1,46 @@
+import pygame
+import random
+
+pygame.init()
+pygame.display.set_caption("Turkey!")
+screen = pygame.display.set_mode((1000, 1000))
+
+while(1):
+    screen.fill((random.randrange(0, 255), random.randrange(0, 255), random.randrange(0, 255)))
+    
+    #legs
+    pygame.draw.rect(screen, (255, 227, 43), (450, 600, 25, 250))
+    pygame.draw.rect(screen, (255, 227, 43), (550, 600, 25, 250))
+    
+    #feathers
+    pygame.draw.circle(screen, (91, 206, 250), (320, 575), 70)
+    pygame.draw.circle(screen, (245, 169, 184), (310, 475), 70)
+    pygame.draw.circle(screen, (91, 206, 250), (340, 375), 70)
+    pygame.draw.circle(screen, (245, 169, 184), (400, 325), 70)
+    
+    pygame.draw.circle(screen, (91, 206, 250), (470, 310), 70)
+    pygame.draw.circle(screen, (245, 169, 184), (560, 310), 70)
+    
+    pygame.draw.circle(screen, (91, 206, 250), (650, 325), 70)
+    pygame.draw.circle(screen, (245, 169, 184), (700, 375), 70)
+    pygame.draw.circle(screen, (91, 206, 250), (750, 475), 70)
+    pygame.draw.circle(screen, (245, 169, 184), (770, 575), 70)
+    
+    #body
+    pygame.draw.circle(screen, (110, 70, 0), (525, 550), 200)
+    pygame.draw.circle(screen, (0,0,0), (525, 550), 200, 2)
+    
+    pygame.draw.ellipse(screen, (110, 70, 0), (450, 250, 150, 250)) # x, y, width, length
+    pygame.draw.ellipse(screen, (0,0,0), (450, 250, 150, 250), 2)
+    
+    #beak
+    pygame.draw.polygon(screen, (255, 227, 43), ((475, 300), (575, 300), (525, 400)))
+    pygame.draw.polygon(screen, (0, 0, 0), ((475, 300), (575, 300), (525, 400)),3)
+    
+    #eyes
+    pygame.draw.circle(screen, (255,255,255), (475, 300), 25)
+    pygame.draw.circle(screen, (255,255,255), (575, 300), 25)
+    pygame.draw.circle(screen, (random.randrange(0, 255), random.randrange(0, 255), random.randrange(0, 255)), (475, 300), 22)
+    pygame.draw.circle(screen, (random.randrange(0, 255), random.randrange(0, 255), random.randrange(0, 255)), (575, 300), 22)
+    
+    pygame.display.flip()
